@@ -1,0 +1,27 @@
+{
+  "name": "fp-js-fizzbuzz",
+  "version": "0.0.0",
+  "main": "lib",
+  "author": "Texas Toland (https://twitter.com/texastoland)",
+  "license": "Unlicense",
+  "scripts": {
+    "postinstall": "yarn build",
+    "start": "node $npm_package_main",
+    "clean": "rm -rf lib",
+    "build": "tsc",
+    "postbuild": "yarn format:js",
+    "watch": "yarn build -w",
+    "format": "yarn format:js && yarn format:ts",
+    "format:js": "prettier '**/*.js' --ignore-path .gitignore -l --write || :",
+    "format:ts": "prettier '**/*.ts' --ignore-path .gitignore -l --write || :"
+  },
+  "dependencies": {
+    "fp-ts": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.1",
+    "prettier": "^1.14.2",
+    "tsconfigs": "^3.0.0",
+    "typescript": "^3.0.1"
+  }
+}
