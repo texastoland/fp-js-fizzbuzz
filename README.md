@@ -6,11 +6,11 @@
 
 ## Implementation
 
-|         | [TypeScript][ts]                  | [Reason][re]                            | [PureScript][ps]                            |
-| ------- | --------------------------------- | --------------------------------------- | ------------------------------------------- |
-| Library | [fp-ts][fp-ts] (@gcanti)          | [bs-abstract][bs-abs] (@Risto-Stevcev)  | [Prelude][prelude]                          |
-| Source  | [`index.ts`](src/index.ts)        | [`index.re`](src/index.re)              | [`index.purs`](src/index.purs)              |
-| Bundle  | [`index.js`](lib/js/src/index.js) | [`index.bs.js`](lib/js/src/index.bs.js) | [`index.purs.js`](lib/js/src/index.purs.js) |
+|         | [TypeScript][ts]                  | [Reason][re]                                                                          | [PureScript][ps]                            |
+| ------- | --------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------- |
+| Library | [fp-ts][fp-ts] (@gcanti)          | [bs-abstract][bs-abs] (@Risto-Stevcev)                                                | [Prelude][prelude]                          |
+| Source  | [`index.ts`](src/index.ts)        | [`index.re`](src/index.re) [`index_ml.ml`](src/index_ml.ml)                           | [`index.purs`](src/index.purs)              |
+| Bundle  | [`index.js`](lib/js/src/index.js) | [`index.bs.js`](lib/js/src/index.bs.js) [`index_ml.bs.js`](lib/js/src/index_ml.bs.js) | [`index.purs.js`](lib/js/src/index.purs.js) |
 
 ## Inspiration
 

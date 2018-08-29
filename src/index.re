@@ -1,7 +1,6 @@
 open BsAbstract;
 
 module FoldMapAOS = Array.Foldable.Fold_Map(Functors.OptionF.String.Monoid);
-/* module PPXLetA = PPX_Let.Make(Array.Monad); */
 
 /* types */
 type rule = int => option(string);
@@ -32,11 +31,6 @@ let range2D = (~w, ~h) => {
   let int = (y, x) => y * w + x + 1;
   let row = y => int(y) <$> 0 --^ w;
   row <$> 0 --^ h;
-  /* alternatively:
-     open PPXLetA;
-     let%map y = 0 --^ h;
-     let%map x = 0 --^ w;
-     y * w + x + 1; */
 };
 let () = {
   open! Function.Infix;

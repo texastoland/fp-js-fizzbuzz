@@ -9,6 +9,7 @@
     "start": "cd $npm_package_main && node",
     "start:ts": "npm run start -- .",
     "start:bs": "npm run start -- index.bs",
+    "start:ml": "npm run start -- index_ml.bs",
     "start:ps": "npm run start -- index.purs",
     "clean": "rm -rf lib .psc-package .pulp-cache",
     "build": "npm run build:ts && npm run build:bs && npm run build:ps",

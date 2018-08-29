@@ -10,7 +10,7 @@
   },
   "suffix": ".bs.js",
   "bs-dependencies": ["bs-abstract"],
-  // "ppx-flags": ["ppx_let/ppx"],
+  "ppx-flags": ["ppx_let/ppx"],
   "warnings": {
     "error": "+101"
   },
