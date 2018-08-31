@@ -38,10 +38,9 @@ rules = [ cond (divisBy 3) "🐭"
         ]
 
 -- run
-range2D w h = row <$> 0 .. (h - 1)
-  where
-  row y = int y <$> 0 .. (w - 1)
-  int y x = y * w + x + 1
+range2D w h = do
+  i <- 0 .. (h - 1)
+  pure $ (i * w + 1) .. ((i + 1) * w)
 
 main = logAny $ game rules `mapmap` range2D 10 10
   where

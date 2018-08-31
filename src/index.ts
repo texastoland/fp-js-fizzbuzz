@@ -25,10 +25,8 @@ const rules = [
 ];
 
 // run
-const range = (n: number) => [...Array(n).keys()];
-const range2D = (w: number, h: number) => {
-  const int = (y: number) => (x: number) => y * w + x + 1;
-  const row = (y: number) => range(w).map(int(y));
-  return range(h).map(row);
-};
+const range = (start: number, end: number) =>
+  [...Array(end - start + 1).keys()].map(i => i + start);
+const range2D = (w: number, h: number) =>
+  range(0, h - 1).map(i => range(i * w + 1, (i + 1) * w));
 console.log(range2D(10, 10).map(y => y.map(game(rules))));

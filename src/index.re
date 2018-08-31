@@ -25,12 +25,10 @@ let rules = [|
 |];
 
 /* run */
-let (--^) = (start, finish) => Belt.Array.range(start, finish - 1);
+let (--) = Belt.Array.range;
 let range2D = (~w, ~h) => {
-  open Array.Infix;
-  let int = (y, x) => y * w + x + 1;
-  let row = y => int(y) <$> 0 --^ w;
-  row <$> 0 --^ h;
+  open! Array.Infix;
+  0 -- (h - 1) <#> (i => i * w + 1 -- (i + 1) * w);
 };
 let () = {
   open! Function.Infix;

@@ -24,12 +24,11 @@ let rules = [|
 |]
 
 (* run *)
-let (--^) start finish = Belt.Array.range start (finish - 1)
+let (--) = Belt.Array.range
 let range2D ~w ~h =
   let open PPXLetA in
-  let%map y = 0 --^ h in
-  let%map x = 0 --^ w in
-  y * w + x + 1
+  let%map i = 0 -- (h - 1) in
+  i * w + 1 -- (i + 1) * w
 let () =
   let open Function.Infix in
   Js.log (Array.Functor.(map <. map) (game rules) (range2D ~w:10 ~h:10))
