@@ -1,4 +1,7 @@
 .merlin
+.psc-ide-port
+.psc-package
+.pulp-cache
 lib/*
 !lib/js
 *.map

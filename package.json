@@ -9,17 +9,23 @@
     "start": "cd $npm_package_main && node",
     "start:ts": "yarn start .",
     "start:bs": "yarn start index.bs",
-    "clean": "rm -rf lib",
-    "build": "yarn build:ts && yarn build:bs",
+    "start:ps": "yarn start index.purs",
+    "clean": "rm -rf lib .psc-package .pulp-cache",
+    "build": "yarn build:ts && yarn build:bs && yarn build:ps",
     "postbuild": "yarn format:js",
     "build:ts": "tsc",
     "build:bs": "bsb -make-world",
+    "prebuild:ps": "psc-package install",
+    "build:ps": "pulp --psc-package build -o lib/purs --to lib/js/src/index.purs.js",
     "watch:ts": "yarn build:ts -w",
     "watch:bs": "yarn build:bs -w",
-    "format": "yarn format:js && yarn format:ts && yarn format:bs",
+    "prewatch:ps": "yarn prebuild:ps",
+    "watch:ps": "pulp -w --psc-package build -o lib/purs --to lib/js/src/index.purs.js",
+    "format": "yarn format:js && yarn format:ts && yarn format:bs && yarn format:ps",
     "format:js": "prettier '**/*.js' --ignore-path .gitignore -l --write || :",
     "format:ts": "prettier '**/*.ts' --ignore-path .gitignore -l --write || :",
-    "format:bs": "find -E src -type f -regex '.+\\.(ml|re)i?' -exec npx bsrefmt {} --in-place \\;"
+    "format:bs": "find -E src -type f -regex '.+\\.(ml|re)i?' -exec npx bsrefmt {} --in-place \\;",
+    "format:ps": "find src -type f -name '*.purs' -exec npx purty {} --dynamic --write \\;"
   },
   "dependencies": {
     "bs-abstract": "^0.16.0",
@@ -30,6 +36,10 @@
     "bs-platform": "^4.0.5",
     "ppx_let": "andreypopp/ppx_let",
     "prettier": "^1.14.2",
+    "psc-package-bin-simple": "^1.0.1",
+    "pulp": "^12.3.0",
+    "purescript": "^0.12.0",
+    "purty": "^3.0.3",
     "tsconfigs": "^3.0.0",
     "typescript": "^3.0.1"
   }
