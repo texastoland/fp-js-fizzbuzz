@@ -3,6 +3,7 @@
   "compilerOptions": {
     "inlineSourceMap": false,
     "inlineSources": false,
+    "outDir": "lib/js/src",
     "sourceMap": true
   }
 }

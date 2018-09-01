@@ -6,9 +6,21 @@
   version "10.9.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.2.tgz#f0ab8dced5cd6c56b26765e1c0d9e4fdcc9f2a00"
 
+bs-abstract@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/bs-abstract/-/bs-abstract-0.16.0.tgz#cb214e0b45710c28562ddb671a736b084b8aaf86"
+
+bs-platform@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-4.0.5.tgz#d4fd9bbdd11765af5b75110a5655065ece05eed6"
+
 fp-ts@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-1.8.0.tgz#305909ebb3f44b21f77e9e3313ee0ed5ee809daa"
+
+ppx_let@andreypopp/ppx_let:
+  version "0.0.0"
+  resolved "https://codeload.github.com/andreypopp/ppx_let/tar.gz/63d3caf4b31498cf459c3765335e62347665615e"
 
 prettier@^1.14.2:
   version "1.14.2"

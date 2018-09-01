@@ -1,25 +1,34 @@
 {
   "name": "fp-js-fizzbuzz",
   "version": "0.0.0",
-  "main": "lib",
+  "main": "lib/js/src",
   "author": "Texas Toland (https://twitter.com/texastoland)",
   "license": "Unlicense",
   "scripts": {
     "postinstall": "yarn build",
-    "start": "node $npm_package_main",
+    "start": "cd $npm_package_main && node",
+    "start:ts": "yarn start .",
+    "start:bs": "yarn start index.bs",
     "clean": "rm -rf lib",
-    "build": "tsc",
+    "build": "yarn build:ts && yarn build:bs",
     "postbuild": "yarn format:js",
-    "watch": "yarn build -w",
-    "format": "yarn format:js && yarn format:ts",
+    "build:ts": "tsc",
+    "build:bs": "bsb -make-world",
+    "watch:ts": "yarn build:ts -w",
+    "watch:bs": "yarn build:bs -w",
+    "format": "yarn format:js && yarn format:ts && yarn format:bs",
     "format:js": "prettier '**/*.js' --ignore-path .gitignore -l --write || :",
-    "format:ts": "prettier '**/*.ts' --ignore-path .gitignore -l --write || :"
+    "format:ts": "prettier '**/*.ts' --ignore-path .gitignore -l --write || :",
+    "format:bs": "find -E src -type f -regex '.+\\.(ml|re)i?' -exec npx bsrefmt {} --in-place \\;"
   },
   "dependencies": {
+    "bs-abstract": "^0.16.0",
     "fp-ts": "^1.8.0"
   },
   "devDependencies": {
     "@types/node": "^10.9.1",
+    "bs-platform": "^4.0.5",
+    "ppx_let": "andreypopp/ppx_let",
     "prettier": "^1.14.2",
     "tsconfigs": "^3.0.0",
     "typescript": "^3.0.1"

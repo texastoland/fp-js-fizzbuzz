@@ -1,0 +1,18 @@
+{
+  "name": "fp-js-fizzbuzz",
+  "version": "0.0.0",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "commonjs"
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": ["bs-abstract"],
+  // "ppx-flags": ["ppx_let/ppx"],
+  "warnings": {
+    "error": "+101"
+  },
+  "refmt": 3
+}

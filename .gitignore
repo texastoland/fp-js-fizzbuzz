@@ -1,2 +1,5 @@
+.merlin
+lib/*
+!lib/js
 *.map
 node_modules
